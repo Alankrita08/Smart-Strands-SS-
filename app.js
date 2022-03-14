@@ -23,13 +23,9 @@ function check() {
 
     if(userName.value == storedusername1 && userPw.value == storedpassword1) {
         alert('You are loged in.');
-        window.location.href = 'menu.html';
-    }
-    else if ( userName.value == null || userPw.value === null)
-    {
-        alert('Please enter all the details');
+        window.open('menu.html');
     }
     else{
-        alert('Either username or password is incorrect');
+        alert('Please check your Username and Password');
     }
 }
