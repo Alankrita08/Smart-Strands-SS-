@@ -1,28 +1,35 @@
+var name1 = document.getElementById('name1');
 var username1 = document.getElementById('username1');
+var phoneno1 = document.getElementById('phoneno1');
 var password1 = document.getElementById('password1');
+var shopid1 = document.getElementById('shopid1');
 
-// storing input from register-form
+
 function store() {
+    localStorage.setItem('name1', name1.value);
     localStorage.setItem('username1', username1.value);
+    localStorage.setItem('phoneno1', phoneno1.value);
     localStorage.setItem('password1', password1.value);
+    localStorage.setItem('shopid1', shopid1.value);
 }
-
-// check if stored data from register-form is equal to entered data in the   login-form
 function check() {
 
-    // stored data from the register-form
     var storedusername1 = localStorage.getItem('username1');
     var storedpassword1 = localStorage.getItem('password1');
 
-    // entered data from the login-form
-    var userName = document.getElementById('loginusername').value;
-    var userPw = document.getElementById('loginpassword').value;
+    var userName = document.getElementById('loginusername');
+    var userPw = document.getElementById('loginpassword');
 
-    // check if stored data from register-form is equal to data from login form
 
     if(userName.value == storedusername1 && userPw.value == storedpassword1) {
         alert('You are loged in.');
-    }else {
-        alert('ERROR.');
+        window.location.href = 'menu.html';
+    }
+    else if ( userName.value == null || userPw.value === null)
+    {
+        alert('Please enter all the details');
+    }
+    else{
+        alert('Either username or password is incorrect');
     }
 }
